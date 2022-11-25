@@ -2,20 +2,20 @@ import React, {useState} from 'react'
 
 
 
-function Circle() {
+function Circle({colorCount}) {
+
+  const props = {...colorCount};
 
     const [color, setColor] = useState('');
-    const [colorCount, setColorCount] = useState('');
     
     function bgColor(){
-        console.log('first')
         setColor(color ? '': '#f2f2f2');
-        // addCount();
+        props.setColorCount(color ? props.colorCount - 1 : props.colorCount + 1)
     }
 
 
   return (
-    <div className={`circle ${color ? 'bgColor' : '' }`}  onClick={()=>bgColor()} >any</div>
+    <div className={`circle ${color ? 'bgColor' : '' }`}  onClick={()=>bgColor()} ></div>
   )
 }
 

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Circle from './component/Circle';
@@ -6,28 +5,23 @@ import Circle from './component/Circle';
 function App() {
 
   const [circleCount, setCircleCount] = useState([]);
-  const [colorCount, setColorCount] = useState([])
+  const [colorCount, setColorCount] = useState(0)
 
 
 
   function addCircle(){
-    setCircleCount([...circleCount, 'any']);
+    setCircleCount([...circleCount, '']);
   }
-  // setColor([...color, '#a5a5a5'])
   
-
-  
-  // useEffect(()=>{
-  //   console.log(circleCount)
-  // }, circleCount)
+  useEffect(()=>{
+  },[colorCount])
 
   return (
     <div className="App">
       <button onClick={()=>addCircle()} >add Circle</button>
-      <span>Color count</span>
+      <span>Color count {colorCount}</span>
       {circleCount && circleCount.map((i, index)=>{
-        // console.log(i)
-        return <Circle color={{setColorCount, colorCount}} key={index+i} />
+        return <Circle colorCount={{colorCount, setColorCount}}  key={index+i} />
       })}
     </div>
   );

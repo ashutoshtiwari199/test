@@ -3,8 +3,9 @@
 }
 
 .circle{
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
   border-radius: 50%;
   /* background-color: #a5a4a4; */
   border: 2px solid black;
